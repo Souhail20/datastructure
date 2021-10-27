@@ -28,7 +28,7 @@ BEGIN
     temp:=0;  
   END_IF
   sum:=sum+temp;
+  END_FOR 
   END_FOR
-  WRITE(sum);  
-  END_FOR
+  WRITE(sum); 
 END

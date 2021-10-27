@@ -28,6 +28,6 @@ BEGIN
         END_IF
         tab.insert(settwo[i],1);
         END_FOR
-    Write(sum);
+    WRITE(sum);
 END
 END
