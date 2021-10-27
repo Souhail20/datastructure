@@ -1,0 +1,33 @@
+ALGORITHM method2_overlapping
+VAR
+setone : ARRAY_OF INTEGER[];
+settwo : ARRAY_OF INTEGER[];
+tab : HASH_TABLE<INTEGER,INTEGER>;
+i,j,count,sum:INTEGER;
+BEGIN
+   READ(setone);
+   READ(settwo);
+   sum:=0
+   FOR i FROM 0 TO setone.lenght-1 DO
+   tab.insert(setone[i],1);
+   FOR j FROM 0 TO settwo.lenght-1 DO 
+   count:=1;
+   IF (tab.lookup(settwo[j]=TRUE)) THEN
+       count:=count+1;
+       tab.insert(setone[i],count);
+       sum:=sum+setone[i];
+   END_IF
+   END_FOR
+   END_FOR
+   FOR i FROM 0 TO settwo.length-1 DO
+        count:=1;
+        IF (tab.lookup(settwo[i])=TRUE) THEN
+            count:=count+1;
+            tab.insert(settwo[i],count);
+            sum:=sum+settwo[i];
+        END_IF
+        tab.insert(settwo[i],1);
+        END_FOR
+    Write(sum);
+END
+END

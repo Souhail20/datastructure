@@ -1,0 +1,34 @@
+ALGORITHM sum_distinct
+VAR
+ setone : ARRAY_OF INTEGER[];
+ settwo : ARRAY_OF INTEGER[];
+ i,j,sum,temp:INTEGER
+BEGIN
+ WRITE("donner les elements de setone ");
+  READ(setone);
+  WRITE("donner les elements de setwo ");
+  READ(settwo);
+  sum:=0;
+  FOR i FROM 0 TO setone.lenght-1 DO
+  FOR j FROM 0 TO settwo.lenght-1 DO
+  
+  IF (setone[i]<>settwo[j]) THEN
+  temp:=setone[i];
+  ELSE
+  temp:=0;  
+  END_IF
+  sum:=sum+temp;
+  END_FOR  
+  END_FOR
+  FOR i FROM 0 TO settwo.lenght DO
+  FOR j FROM 0 TO setone.lenght DO
+  IF (settwo[i]<>setone[j]) THEN
+    temp:=settwo[i];
+  ELSE
+    temp:=0;  
+  END_IF
+  sum:=sum+temp;
+  END_FOR
+  WRITE(sum);  
+  END_FOR
+END
